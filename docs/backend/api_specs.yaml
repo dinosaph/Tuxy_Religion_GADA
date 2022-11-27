@@ -1,1 +1,162 @@
-TODO!! -> HELPFUL: https://redocly.github.io/redoc/
+swagger: "2.0"
+info:
+  title: "GADA-Game on web of Data - OpenAPI"
+  version: "1.0.0"
+  description: |-
+    A web game where you can use a claw machine to get character to add to your collection and then use them in a game of foosball, where you could win the currency you need to get even more charcter for your collection.
+    - [GADA Github Repo](https://github.com/dinosaph/Tuxy_Religion_GADA)
+tags:
+  - name: character
+    description: Operations related to the user's character collection
+  - name: main
+    description: Main operations - related to webpages
+schemes:
+- "https"
+- "http"
+paths:
+  /home:
+    get:
+      tags:
+      - main
+      summary: Web page - Home
+      description: Get main web page
+      operationId: getHome
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /about:
+    get:
+      tags:
+      - main
+      summary: Web page - About
+      description: Get about project page
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /contact:
+    get:
+      tags:
+      - main
+      summary: Web page - Contact
+      description: Get the contact page
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /claw:
+    get:
+      tags:
+      - main
+      summary: Web page - Claw game
+      description: Get the claw game page
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /foosball:
+    get:
+      tags:
+      - main
+      summary: Web page - Foosball
+      description: Get the foosball game page
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /collection:
+    get:
+      tags:
+      - main
+      summary: Web page - Collection
+      description: Get the collection page
+      produces:
+      - "text/html"
+      responses:
+        '200':
+          description: Successful operation
+  /character/get_collection/:
+    get:
+      tags:
+      - character
+      summary: Character collection operation - get collection
+      description: Get user's entire character collection
+      operationId: getCollection
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Successful operation
+        '404':
+          description: Collection not available
+  /character/get_character/:
+    get:
+      tags:
+      - character
+      summary: Character collection operation - get character
+      description: Get one character from collection
+      operationId: getCharacter
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Successful operation
+        '404':
+          description: Character not found
+  /character/post_character/:
+    post:
+      tags:
+      - character
+      summary: Character collection operation - post character
+      description: Adds one character to collection
+      operationId: postCharacter
+      consumes:
+      - "application/json"
+      responses:
+        '200':
+          description: Successful operation
+        '405':
+          description: Invalid input
+  /character/get_pokemon/{pokemonName}:
+    get:
+      tags:
+      - scan
+      summary: Collection operation - Get character from Pokemon api
+      description: Adds character from Pokemon API
+      operationId: getPokemon
+      parameters:
+        - in: path
+          name: pokemonName
+          type: string
+          required: true
+          description: Name of the pokemon to get
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Successful operation
+  /character/get_marvel_character/{characterId}:
+    get:
+      tags:
+      - scan
+      summary: Collection operation - Get character from Marvel api
+      description: Adds character from Marvel API
+      operationId: getMarvelCharacter
+      parameters:
+        - in: path
+          name: characterId
+          type: string
+          required: true
+          description: Numeric ID of the character to get
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Successful operation
+ 

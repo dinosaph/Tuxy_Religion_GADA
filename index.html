@@ -118,7 +118,7 @@
                     GADA by Tuxy Religion gladly presents an idea that combines two types of games that you can't stop playing: a claw catcher machine game and a foosball machine game. The user receives initial tickets that he can use in the claw catcher game in order to unlock new hero characters. These characters are further used in the foosball matching game (user vs computer), game in which the user wins more tickets.
                 </p>
                 <p>
-                    Our game promises continous, never-stopping fun!
+                    Our game promises never-stopping & colorful fun!
                 </p>
             </section>
             <section id="architecture">
@@ -126,21 +126,31 @@
                     <span>3. </span>
                     Architecture
                 </h2>
+                <figure typeof="sa:image">
+                    <img src='docs/module_overview.png'/>
+                </figure>
                 <p>
-                    GADA is proposed to be developed in the following ? modules:
+                    GADA is proposed to be developed in the following 3 modules:
                 </p>
-                <li>UI Web & Game - Minimalist and friendly design</li>
-                <li>???</li>
+                <li>User Interface Web & Game - Minimalist and friendly design</li>
+                <li>Server - Main backend component that deals with all actions between the modules</li>
+                <li>Game - Fun, colorful game combining 2 classic machine games: claw catcher and foosball</li>
                 <section id="module-ui">
                     <h3>
                         <span>3.1 </span>
                         UI Web & Game
                     </h3>
+                    <figure typeof="sa:image">
+                        <img src='docs/frontend/web_interface.png'/>
+                    </figure>
                     <p>
                         The users can navigate on 3 pages:
                         <li><i>Page - Play</i> - where they can play our game </li>
                         <li><i>Page - About</i> - where they can read details of the project, team and gameplay </li>
                         <li><i>Page - Contact</i> - where they can keep in touch with the development team </li>
+                    </p>
+                    <p>
+                        <i>Used technologies: html, css, js, canvas</i>
                     </p>
                     <section id="page-play">
                         <h4>
@@ -221,6 +231,21 @@
                         </figure>
                     </section>
                 </section>
+                <section id="module-server">
+                    <h3>
+                        <span>3.2 </span>
+                        Server
+                    </h3>
+                    <figure typeof="sa:image">
+                        <img src='docs/backend/server.png'/>
+                    </figure>
+                    <p>
+                        GADA's server purpose is to provide website/web pages to users with necessary game and characters data. Also, it communicates with APIs for requested characters data.
+                    </p>
+                    <p>
+                        <i>Used technologies: Django + Angular</i>
+                    </p>
+                </section>
             </section>
             <section id="datamodel">
                 <h2>
@@ -228,7 +253,7 @@
                     Data Modelling
                 </h2>
                 <p>
-                    <i> ??? </i>
+                    GADA will be storing scores information in a database that is popular, tested, documented, easy to use and lightweight, MongoDB.
                 </p>
             </section>
             <section id="conclusion">
@@ -243,6 +268,9 @@
                 <ol>
                     <li>[....0%....] Functional minimalist frontend views</li>
                     <li>[....0%....] Functional main server</li>
+                    <li>[....0%....] Functional claw game</li>
+                    <li>[....0%....] Functional foosball game</li>
+                    <li>[....0%....] Functional APIs usage for character data requests</li>
                     <li>[....0%....] Functional database usage for data storing </li>
                 </ol>
             </section>
@@ -269,6 +297,11 @@
                 <li>
                     <a href="https://editor.swagger.io/">
                         OpenAPI creation support
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mongodb.com/compatibility/mongodb-and-django">
+                        Integration of Django with MongoDB
                     </a>
                 </li>
             </section>
